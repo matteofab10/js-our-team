@@ -3,11 +3,9 @@
 // - Utilizziamo poi gli input presenti nella pagina per permettere all’utente di aggiungere nuovi membri del team. (se non fate tempo a realizzare questa parte va bene ugualmente e pensateci in ogni caso solo una volta stampata correttamente tutta la pagina)
 
 const container = document.querySelector('.team-container');
-const img = document.getElementById("image").value;
-const nameUser = document.getElementById("name").value;
-const role = document.getElementById("role").value;
+// const btn = document.getElementById("addMemberButton");
 
-const profili = [
+const profiles = [
 {
   img : 'img/angela-caroll-chief-editor.jpg',
   name : 'Angela Caroll',
@@ -34,27 +32,26 @@ const profili = [
   role : 'Graphic Designer'
 }]
 
-console.log('array profili', profili);
+console.log('array profili', profiles);
 
-for(let index in profili){
-  const utente = profili[index];
+for(let index in profiles){
+  const user = profiles[index];
 
-  const utenteImg = utente.img;
-  const utenteName = utente.name;
-  const utenteRole = utente.role;
+  const userImg = user.img;
+  const userName = user.name;
+  const userRole = user.role;
 
   container.innerHTML +=
   `
   <div class="team-card">
     <div class="card-image">
       <img
-        src="${utenteImg}"
-        alt="Wayne Barnett"
+        src="${userImg}"
       />
     </div>
     <div class="card-text">
-      <h3>${utenteName}</h3>
-      <p>${utenteRole}</p>
+      <h3>${userName}</h3>
+      <p>${userRole}</p>
     </div>
   </div>
   `
